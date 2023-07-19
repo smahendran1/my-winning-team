@@ -1,0 +1,67 @@
+Part 1:
+Person class: instance variables name (string) and age (int). Create setters and getters
+
+--Create instance variables position (string) and salary (int) in the hockeyplayer class
+--use extends keyword in class declaration and use super in the constructor. create setters an d getters and toString method
+
+--Create instance variables position (string) and salary (int) in the basketballplayer class
+--use extends keyword in class declaration and use super in the constructor. create setters an d getters and toString method
+
+
+
+
+
+Part 2:
+
+--call import statements for arrayLists
+--teamHockey of HockeyPlayer objects
+--teamBasketball of basketballPlayer objects
+--FreeagentListBasketball of basketballPlayer objects
+--FreeagentListHocket of hockeyPlayer objects
+--int totalteamsalary
+
+-Read in from text file using buffered reader
+-Seperate the data appropriately and put into array lists in the constructor
+--create getter for both freeagent lists-- return type should be either basketballplayer or hockeyplayer
+
+toString method: present the data of the roster so that it is in the “position: playerName” format. Reference the order in which the positions should be presented in the SignPlayer method
+
+For display player: depending on the passed variable, use the toString method from the respective class. Utilize the getName, getPosition, and getSalary getters. Traverse freeAgentHockey&Basketball to find whether the player is an athlete at all
+
+Part 3:
+
+For signplayer, first act accordingly to what the word in string type is--either basketballplayer or hockeyplayer. Then your average salary should be the midpoint of the range, so you can just find that by doing (upperBound + lowerBound)/2. And the marginoferror can be within 1-3k because thats approximately the difference between the midpoint and either endpoint. Also, before you check anything else, determine the age of the current player, and continue or return false accordingly. ELSE, depending on the position, see if their salary is within the range of: average +/- marginOfError--if it is return true.
+
+
+For create team, if the output produced from the call to signPlayer is false, do not make any modifications. However, if it is true, you must replace the existing player--either a false player or an actual player-- at the current position. Note the indexes at which you must place the players for each position
+
+Send team: write the correct and finalized team into a text file. Call the appropriate import statements and exceptions.
+
+TotalSalaryHockey: traverse through an arrayList and sum up the salaries using .getSalary
+
+highestSalaryHockey: traverse through an arraylist using the greater than operator
+
+lowestSalaryHockey: traverse through an arraylist using the less than operator
+
+averageSalaryHockey: totalSalaryHockey()/teamHockey.size()
+
+TotalSalaryBall: traverse through an arrayList and sum up the salaries using .getSalary
+
+highestSalaryBall: traverse through an arraylist using the greater than operator
+
+lowestSalaryBall: traverse through an arraylist using the less than operator
+
+averageSalaryBall: totalSalaryBall()/teamBasketball.size();
+
+
+Part 4:
+
+When initlializing each of the arrayLists, simply set them equal to the corresponding arraylists in the superclass. **make sure to use extends keyword in class declaration**
+In the constructor, the first line of code must be the super();
+
+For sign player,
+You must check if the corresponding position on the official team is not the same as the person that’s currently being checked; do this by using .getName() and checking names. Additionally, you must ensure that the same player IS NOT on both teams, even if it comes at the expense of choosing someone who is more expensive. Neglect age in this method.
+
+For create team, if the output produced from the call to signPlayer is false, do not make any modifications. However, if it is true, you must replace the existing player--either a false player or an actual player-- at the current position. Note the indexes at which you must place the players for each position
+
+totalSalary: simply traverse through the affiliate team for the given type of sport. Add each salary.
